@@ -97,20 +97,26 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 #    . /etc/bash_completion
 #fi
 
+export CLICOLOR=1 
+export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
 
 #
-alias ls='ls -lh --color=auto'
+alias ls='ls -lahT' # --color=auto'
 alias la='ls -hAXlv'
 alias y='byobu'
 alias x='exit'
-alias u='sudo apt-get update ; sudo apt-get upgrade -y'
+#alias u='sudo apt-get update ; sudo apt-get upgrade -y'
 alias py2exe='wine python setup.py py2exe'
-alias lx='pdflatex'
-alias open='gnome-open'
-alias lxx='pdflatex -halt-on-error *.tex && open *.pdf'
-#alias vagr='ssh vagrant@192.168.0.230'
-#alias vag='ssh vagrant@192.168.0.230 -p 8022'
-alias pro='ssh 192.168.101.15'
+#alias lx='pdflatex'
+#alias open='gnome-open'
+#alias lxx='pdflatex -halt-on-error *.tex && open *.pdf'
+##alias vagr='ssh vagrant@192.168.0.230'
+##alias vag='ssh vagrant@192.168.0.230 -p 8022'
+#alias pro='ssh 192.168.101.15'
 # set PATH so it includes user's private bin if it exists
 #if [ -d "$HOME/bin" ] ; then
 #    PATH="$HOME/bin:$PATH"

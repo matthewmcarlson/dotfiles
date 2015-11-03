@@ -52,18 +52,23 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 #Copied and pasted from .profile
 ##################################################################################
 
-alias u='sudo apt-get update ; sudo apt-get upgrade -y'
-alias ls='ls -lh --color=auto'
-alias la='ls -hAXlv'
+export CLICOLOR=1 
+export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
+#alias u='sudo apt-get update ; sudo apt-get upgrade -y'
+#alias ls='ls -lahT' #--color=auto'
+#alias la='ls -hAXlv'
 alias y='byobu'
 alias x='exit'
-alias u='sudo apt-get update ; sudo apt-get upgrade --force-yes'
-alias py2exe='wine python setup.py py2exe'
-alias lx='pdflatex'
-alias open='gnome-open'
-alias lxx='pdflatex -halt-on-error *.tex && open *.pdf'
+#alias u='sudo apt-get update ; sudo apt-get upgrade --force-yes'
+#alias py2exe='wine python setup.py py2exe'
+#alias lx='pdflatex'
+#alias open='gnome-open'
+#alias lxx='pdflatex -halt-on-error *.tex && open *.pdf'
 #alias vagr='ssh vagrant@192.168.0.230'
-alias pro='ssh 192.168.101.15'
+#alias pro='ssh 192.168.101.15'
 # set PATH so it includes user's private bin if it exists
 #if [ -d "$HOME/bin" ] ; then
 #    PATH="$HOME/bin:$PATH"
@@ -73,4 +78,5 @@ alias pro='ssh 192.168.101.15'
 	# Path="$PATH:/home/matt/projects"
     Path="$PATH:/home/mcarlson/projects/androidapps/adt-bundle-linux-x86_64-20131030/eclipse"
 
-fortune -s | cowsay -n -f moose	
+fortune -s | cowsay -n -f moose
+byobu
