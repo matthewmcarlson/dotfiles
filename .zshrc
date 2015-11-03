@@ -19,6 +19,7 @@ alias ls='ls -lahT' # --color=auto'
 alias la='ls -hAXlv'
 alias y='byobu'
 alias x='exit'
+alias ssh='ssh -A'
 
 export VISUAL=vim
 export EDITOR="$VISUAL"

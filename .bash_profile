@@ -62,6 +62,7 @@ export EDITOR="$VISUAL"
 #alias la='ls -hAXlv'
 alias y='byobu'
 alias x='exit'
+alias ssh='ssh -A'
 #alias u='sudo apt-get update ; sudo apt-get upgrade --force-yes'
 #alias py2exe='wine python setup.py py2exe'
 #alias lx='pdflatex'
