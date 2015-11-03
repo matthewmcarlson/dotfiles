@@ -56,6 +56,7 @@ export CLICOLOR=1
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 export VISUAL=vim
 export EDITOR="$VISUAL"
+export PROMPT="%n@%M:%~$ "
 
 #alias u='sudo apt-get update ; sudo apt-get upgrade -y'
 #alias ls='ls -lahT' #--color=auto'

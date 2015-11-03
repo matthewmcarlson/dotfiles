@@ -14,6 +14,7 @@ compinit
 #
 export CLICOLOR=1
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+export PROMPT="%n@%M:%~$ "
 
 alias ls='ls -lahT' # --color=auto'
 alias la='ls -hAXlv'
