@@ -103,7 +103,8 @@ export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
-export PROMPT="%n@%M:%~$ "
+#export PROMPT="%n@%M:%~$ "
+export PS1="\u@\H:\W$ "
 
 #
 alias ls='ls -lahT' # --color=auto'
