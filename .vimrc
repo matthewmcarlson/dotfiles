@@ -42,7 +42,7 @@ Plugin 'scrooloose/nerdtree'
 " Undo tree
 Plugin 'mbbill/undotree'
 " PyLint, Pydoc, pyflake, pep8, etc
-Plugin 'klen/python-mode'
+"Plugin 'klen/python-mode'
 " runs the currently open file through Flake8,
 " a static syntax and style checker for Python source code
 Plugin 'nvie/vim-flake8'
@@ -51,7 +51,7 @@ Plugin 'myusuf3/numbers.vim'
 " Relative line numbers
 Plugin 'RelOps'
 
-
+set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

@@ -97,17 +97,18 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 #    . /etc/bash_completion
 #fi
 
-export CLICOLOR=1 
-export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+#export CLICOLOR=1 
+#export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
 #export PROMPT="%n@%M:%~$ "
-export PS1="\u@\H:\W$ "
+#export PS1="\u@\H:\W$ "
 
 #
-alias ls='ls -lahT' # --color=auto'
+alias htop='htop -u $USER'
+alias ls='ls -lah --color=auto'
 alias la='ls -hAXlv'
 alias y='byobu'
 alias x='exit'
@@ -127,6 +128,6 @@ alias py2exe='wine python setup.py py2exe'
 
 	# PATH="$PATH:/home/matt/android-sdk-linux/tools:/home/matt/android-sdk-linux"
 	# Path="$PATH:/home/matt/projects"
-    Path="$PATH:/home/mcarlson/projects/androidapps/adt-bundle-linux-x86_64-20131030/eclipse"
+ #   Path="$PATH:/home/mcarlson/projects/androidapps/adt-bundle-linux-x86_64-20131030/eclipse"
 
 #fortune -s | cowsay -n -f tux.cow
