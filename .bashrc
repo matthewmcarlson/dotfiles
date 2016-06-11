@@ -61,21 +61,22 @@ term*|rxvt*)
 esac
 
 # enable color support of ls and also add handy aliases
-#if [ -x /usr/bin/dircolors ]; then
-#    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     #alias ls='ls -l --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
+    alias dir='dir --color=auto'
+    alias vdir='vdir --color=auto'
 
-#    alias grep='grep --color=auto'
-#    alias fgrep='fgrep --color=auto'
-#    alias egrep='egrep --color=auto'
-#fi
+    alias git-grep='grep --color=auto'
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
 
 # some more ls aliases
-#alias ll='ls -alF'
-#alias la='ls -lA'
-#alias l='ls -CF'
+alias ll='ls -alF'
+alias la='ls -lA'
+alias l='ls -CF'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -97,20 +98,34 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 #    . /etc/bash_completion
 #fi
 
+#export CLICOLOR=1 
+#export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
+#export PROMPT="%n@%M:%~$ "
+#export PS1="\u@\H:\W$ "
 
 #
-alias ls='ls -lh --color=auto'
+alias htop='htop -u $USER'
+alias ls='ls -lah --color=auto'
 alias la='ls -hAXlv'
 alias y='byobu'
 alias x='exit'
-alias u='sudo apt-get update ; sudo apt-get upgrade -y'
+alias ssh='ssh -A'
+#alias u='sudo apt-get update ; sudo apt-get upgrade -y'
 alias py2exe='wine python setup.py py2exe'
-alias lx='pdflatex'
-alias open='gnome-open'
-alias lxx='pdflatex -halt-on-error *.tex && open *.pdf'
-#alias vagr='ssh vagrant@192.168.0.230'
-#alias vag='ssh vagrant@192.168.0.230 -p 8022'
-alias pro='ssh 192.168.101.15'
+alias cvenv="virtualenv vvv; source vvv/bin/activate; pip install -e . -i https://pypi.yelpcorp.com/simple/"
+alias prod='ssh -A adhoc-sfo2'
+alias python='python2.7'
+function kgrep { kew list --all-regions kew_$2 | \grep -E "$1|Region:|InFlight|="; }
+#alias lx='pdflatex'
+#alias open='gnome-open'
+#alias lxx='pdflatex -halt-on-error *.tex && open *.pdf'
+##alias vagr='ssh vagrant@192.168.0.230'
+##alias vag='ssh vagrant@192.168.0.230 -p 8022'
+#alias pro='ssh 192.168.101.15'
 # set PATH so it includes user's private bin if it exists
 #if [ -d "$HOME/bin" ] ; then
 #    PATH="$HOME/bin:$PATH"
@@ -118,6 +133,18 @@ alias pro='ssh 192.168.101.15'
 
 	# PATH="$PATH:/home/matt/android-sdk-linux/tools:/home/matt/android-sdk-linux"
 	# Path="$PATH:/home/matt/projects"
-    Path="$PATH:/home/mcarlson/projects/androidapps/adt-bundle-linux-x86_64-20131030/eclipse"
-
+ #   Path="$PATH:/home/mcarlson/projects/androidapps/adt-bundle-linux-x86_64-20131030/eclipse"
+export GIT_COMMITTER_NAME="M Carlson"
+export GIT_AUTHOR_NAME="M Carlson"
 #fortune -s | cowsay -n -f tux.cow
+
+# Predictable SSH authentication socket location.
+# https://unix.stackexchange.com/questions/75681/why-do-i-have-to-re-set-env-vars-in-tmux-when-i-re-attach
+SOCK="/tmp/ssh-agent-mcarlson-screen"
+if test $SSH_AUTH_SOCK && [ $SSH_AUTH_SOCK != $SOCK ]
+then
+    rm -f /tmp/ssh-agent-$USER-screen
+    ln -sf $SSH_AUTH_SOCK $SOCK
+    export SSH_AUTH_SOCK=$SOCK
+fi
+

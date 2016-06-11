@@ -52,25 +52,23 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 #Copied and pasted from .profile
 ##################################################################################
 
-alias u='sudo apt-get update ; sudo apt-get upgrade -y'
-alias ls='ls -lh --color=auto'
-alias la='ls -hAXlv'
+export VISUAL=vim
+export EDITOR="$VISUAL"
+export GIT_COMMITTER_NAME="M Carlson"
+export GIT_AUTHOR_NAME="M Carlson"
+#export PROMPT="%n@%M:%~$ "
+#export PS1="\u@\H:\W$ "
+
+#alias u='sudo apt-get update ; sudo apt-get upgrade -y'
+alias ls='ls -lah --color=auto'
+#alias la='ls -hAXlv'
 alias y='byobu'
 alias x='exit'
-alias u='sudo apt-get update ; sudo apt-get upgrade --force-yes'
-alias py2exe='wine python setup.py py2exe'
-alias lx='pdflatex'
-alias open='gnome-open'
-alias lxx='pdflatex -halt-on-error *.tex && open *.pdf'
-#alias vagr='ssh vagrant@192.168.0.230'
-alias pro='ssh 192.168.101.15'
-# set PATH so it includes user's private bin if it exists
-#if [ -d "$HOME/bin" ] ; then
-#    PATH="$HOME/bin:$PATH"
-#fi
-
-	# PATH="$PATH:/home/matt/android-sdk-linux/tools:/home/matt/android-sdk-linux"
-	# Path="$PATH:/home/matt/projects"
-    Path="$PATH:/home/mcarlson/projects/androidapps/adt-bundle-linux-x86_64-20131030/eclipse"
-
-fortune -s | cowsay -n -f moose	
+alias ssh='ssh -A'
+alias htop='htop -u $USER'
+#fortune -s | cowsay -n -f moose
+alias cvenv="virtualenv vvv; source vvv/bin/activate; pip install -e . -i https://pypi.yelpcorp.com/simple/"
+alias python="python2.7"
+alias git-grep="git grep --color=auto"
+alias grep="grep --color=auto"
+function kgrep { kew list --all-regions kew_$2 | \grep -E "$1|Region:|InFlight|="; }
